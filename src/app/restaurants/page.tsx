@@ -11,13 +11,14 @@ export default async function Home() {
         return (
           <article key={restaurant.id}>
             <Link key={restaurant.id} href={`/${restaurant.id}`}>
-              {restaurant.name}
+              {restaurant.name}{" "}
+              <img
+                alt={restaurant.name}
+                className="mb-3 h-[300px] w-full object-cover"
+                src={restaurant.image}
+              />
             </Link>
-            <img
-              alt={restaurant.name}
-              className="mb-3 h-[300px] w-full object-cover"
-              src={restaurant.image}
-            />
+
             <h2 className="inline-flex gap-2 text-lg font-bold">
               <span>{restaurant.name}</span>
               <small className="inline-flex gap-1">
