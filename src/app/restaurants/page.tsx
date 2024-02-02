@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import api from "@/api";
 
 export default async function Home() {
@@ -8,6 +10,9 @@ export default async function Home() {
       {restaurants.map((restaurant) => {
         return (
           <article key={restaurant.id}>
+            <Link key={restaurant.id} href={`/${restaurant.id}`}>
+              {restaurant.name}
+            </Link>
             <img
               alt={restaurant.name}
               className="mb-3 h-[300px] w-full object-cover"
